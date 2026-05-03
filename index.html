@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MendFi — WiFi Security Intelligence</title>
+  <title>MendFi — Inteligencia de Seguridad WiFi</title>
 
   <style>
     :root{
@@ -133,8 +133,14 @@
     }
 
     .section-header{
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 48px;
+    }
+
+    .center-header{
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
     }
 
     .eyebrow{
@@ -188,7 +194,11 @@
       color: #c7c8d0;
       font-size: clamp(1rem, 1.5vw, 1.15rem);
       line-height: 1.7;
-      max-width: 700px;
+      max-width: 720px;
+    }
+
+    .center-header p.lead{
+      margin:0 auto;
     }
 
     p.muted,
@@ -197,7 +207,6 @@
       line-height: 1.7;
     }
 
-    /* nav */
     .nav-wrap{
       position:sticky;
       top:16px;
@@ -309,7 +318,6 @@
       font-size:.92rem;
     }
 
-    /* hero */
     .hero{
       padding: 56px 0 40px;
     }
@@ -490,7 +498,6 @@
       color:#ffb0b0;
     }
 
-    /* trust stats */
     .stats-bar{
       margin-top: 34px;
       padding: 16px;
@@ -518,7 +525,6 @@
       font-size: .92rem;
     }
 
-    /* feature cards */
     .feature-grid{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -528,9 +534,20 @@
     .feature-card{
       border-radius: 24px;
       padding: 24px;
-      min-height: 220px;
+      min-height: 240px;
       position:relative;
       overflow:hidden;
+    }
+
+    .feature-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -40px -80px auto;
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(255,46,46,.14), transparent 70%);
+      pointer-events:none;
     }
 
     .feature-icon{
@@ -555,7 +572,6 @@
       font-size:.98rem;
     }
 
-    /* product showcase */
     .showcase{
       display:grid;
       grid-template-columns: 320px 1fr;
@@ -689,7 +705,53 @@
       flex:0 0 auto;
     }
 
-    /* use cases */
+    .screenshot-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .screenshot-card{
+      border-radius: 26px;
+      overflow:hidden;
+      transition:.25s ease;
+    }
+
+    .screenshot-card:hover{
+      transform: translateY(-6px);
+      border-color: rgba(255,46,46,.28);
+      box-shadow: var(--shadow-soft), 0 18px 70px rgba(255,46,46,.10);
+    }
+
+    .screenshot-thumb{
+      aspect-ratio: 16 / 10;
+      object-fit:cover;
+      width:100%;
+      background:#101116;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .screenshot-content{
+      padding:22px;
+    }
+
+    .screenshot-content span{
+      display:inline-flex;
+      margin-bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size:.78rem;
+      color:#ffd3d3;
+      background: rgba(255,46,46,.08);
+      border:1px solid rgba(255,46,46,.18);
+    }
+
+    .screenshot-content p{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.96rem;
+    }
+
     .usecase-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -719,7 +781,6 @@
       line-height:1.75;
     }
 
-    /* workflow */
     .workflow{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -750,7 +811,114 @@
       line-height:1.7;
     }
 
-    /* pricing-ish callout / cta */
+    .timeline-wrap{
+      position:relative;
+      display:grid;
+      gap:20px;
+    }
+
+    .timeline-wrap::before{
+      content:"";
+      position:absolute;
+      left:24px;
+      top:10px;
+      bottom:10px;
+      width:1px;
+      background: linear-gradient(to bottom, rgba(255,46,46,.1), rgba(255,46,46,.55), rgba(255,46,46,.1));
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns: 54px 1fr;
+      gap:18px;
+      align-items:start;
+      position:relative;
+    }
+
+    .timeline-dot{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.18), transparent 35%),
+        linear-gradient(145deg, rgba(255,46,46,.95), rgba(120,0,0,.75));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 36px rgba(255,46,46,.24);
+      z-index:2;
+    }
+
+    .timeline-card{
+      border-radius:24px;
+      padding:24px;
+    }
+
+    .timeline-card p{
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .faq-item{
+      border-radius:22px;
+      overflow:hidden;
+    }
+
+    .faq-question{
+      width:100%;
+      border:none;
+      cursor:pointer;
+      color:#fff;
+      background: transparent;
+      padding:20px 22px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      text-align:left;
+      font-size:1rem;
+      font-weight:700;
+    }
+
+    .faq-icon{
+      color:var(--red);
+      font-weight:800;
+      transition:.25s ease;
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .28s ease;
+    }
+
+    .faq-answer p{
+      padding:0 22px 20px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .faq-item.active .faq-answer{
+      max-height:260px;
+    }
+
+    .faq-item.active .faq-icon{
+      transform:rotate(45deg);
+    }
+
     .cta-panel{
       padding: 38px;
       border-radius: 34px;
@@ -791,17 +959,22 @@
       gap:12px;
       flex-wrap:wrap;
       justify-content:flex-end;
+      position:relative;
+      z-index:2;
     }
 
-    /* footer */
     footer{
-      padding: 46px 0 60px;
+      padding: 64px 0 60px;
+      border-top:1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,46,46,.08), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
     }
 
     .footer-wrap{
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:20px;
+      gap:48px;
       align-items:start;
     }
 
@@ -810,6 +983,22 @@
       margin-top: 14px;
       max-width: 560px;
       line-height:1.75;
+    }
+
+    .footer-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .footer-pill{
+      padding:8px 12px;
+      border-radius:999px;
+      color:#d7d8df;
+      font-size:.86rem;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.09);
     }
 
     .footer-links{
@@ -836,14 +1025,17 @@
     }
 
     .copyright{
-      margin-top: 34px;
+      margin-top: 42px;
       padding-top: 22px;
       border-top: 1px solid rgba(255,255,255,.08);
       color: var(--muted-2);
       font-size:.92rem;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
-    /* reveal */
     .reveal{
       opacity:0;
       transform: translateY(24px);
@@ -866,22 +1058,20 @@
       }
     }
 
-    /* responsive */
     @media (max-width: 1150px){
       .hero-grid,
       .showcase,
       .screen-meta,
       .cta-panel,
-      .footer-wrap{
+      .footer-wrap,
+      .faq-grid{
         grid-template-columns: 1fr;
       }
 
-      .feature-grid{
-        grid-template-columns: repeat(2, 1fr);
-      }
-
+      .feature-grid,
       .usecase-grid,
-      .workflow{
+      .workflow,
+      .screenshot-grid{
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -896,6 +1086,10 @@
       .showcase-stage{
         min-height: unset;
       }
+
+      .cta-actions{
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width: 780px){
@@ -904,6 +1098,10 @@
       }
 
       .nav-links{
+        display:none;
+      }
+
+      .nav-cta .btn-secondary{
         display:none;
       }
 
@@ -926,7 +1124,8 @@
       .usecase-grid,
       .workflow,
       .footer-links,
-      .stats-bar{
+      .stats-bar,
+      .screenshot-grid{
         grid-template-columns: 1fr;
       }
 
@@ -941,9 +1140,38 @@
       nav{
         border-radius: 24px;
       }
+
+      .frame-title{
+        font-size:.8rem;
+      }
+
+      .timeline-wrap::before{
+        left:19px;
+      }
+
+      .timeline-item{
+        grid-template-columns: 42px 1fr;
+        gap:14px;
+      }
+
+      .timeline-dot{
+        width:40px;
+        height:40px;
+        border-radius:14px;
+      }
+
+      .copyright{
+        display:block;
+      }
+
+      .copyright span{
+        display:block;
+        margin-bottom:8px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="bg-grid"></div>
@@ -958,47 +1186,46 @@
       </a>
 
       <div class="nav-links">
-        <a href="#product">Product</a>
-        <a href="#features">Features</a>
-        <a href="#use-cases">Use Cases</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#contact">Contact</a>
+        <a href="#producto">Producto</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#capturas">Capturas</a>
+        <a href="#timeline">Proceso</a>
+        <a href="#faq">FAQ</a>
       </div>
 
       <div class="nav-cta">
         <a class="btn btn-secondary btn-sm" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn btn-primary btn-sm" href="#product">See Demo</a>
+        <a class="btn btn-primary btn-sm" href="#producto">Ver demo</a>
       </div>
     </nav>
   </div>
 
   <main>
-    <!-- hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">WiFi Security Intelligence</div>
+          <div class="eyebrow">Inteligencia de seguridad WiFi</div>
+
           <h1>
-            See your network
-            <span class="accent">before attackers do</span>
+            Entiende tu red
+            <span class="accent">antes de que sea un problema</span>
           </h1>
+
           <p class="subtitle">
-            MendFi turns complex network visibility into a clean, actionable interface.
-            Scan WiFi environments, identify connected devices, inspect traffic patterns,
-            and surface risk indicators from one unified platform.
+            MendFi es una herramienta de auditoría WiFi que convierte datos técnicos de red en una interfaz clara, visual y accionable. Permite detectar redes cercanas, identificar dispositivos conectados, monitorizar tráfico y analizar riesgos desde un único panel.
           </p>
 
           <div class="hero-actions">
-            <a href="#product" class="btn btn-primary">Explore the product</a>
-            <a href="#contact" class="btn btn-secondary">Request access</a>
+            <a href="#producto" class="btn btn-primary">Explorar producto</a>
+            <a href="#capturas" class="btn btn-secondary">Ver pantallas</a>
           </div>
 
           <div class="hero-chips">
-            <span class="chip">WiFi Scanning</span>
-            <span class="chip">Device Discovery</span>
-            <span class="chip">Traffic Monitoring</span>
-            <span class="chip">Risk Scoring</span>
-            <span class="chip">Modern Analyst UI</span>
+            <span class="chip">Escaneo WiFi</span>
+            <span class="chip">Dispositivos conectados</span>
+            <span class="chip">Tráfico en tiempo real</span>
+            <span class="chip">Análisis de riesgo</span>
+            <span class="chip">Interfaz de auditoría</span>
           </div>
         </div>
 
@@ -1010,40 +1237,39 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
               </div>
-              <span class="frame-title">MendFi Overview Dashboard</span>
-              <span class="muted" style="font-size:.88rem;">Live Preview</span>
+              <span class="frame-title">Panel principal de MendFi</span>
+              <span class="muted" style="font-size:.88rem;">Vista previa</span>
             </div>
 
-            <!-- cambia esta ruta por tu captura principal -->
             <img
               class="dashboard-image"
               src="images/dashboard-overview.png"
-              alt="MendFi overview dashboard screenshot"
+              alt="Captura del panel principal de MendFi"
             />
           </div>
 
           <div class="floating-card glass small">
-            <div class="floating-title">Network Risk</div>
+            <div class="floating-title">Riesgo estimado</div>
             <div class="risk-value">72</div>
-            <div class="risk-tag">High Exposure</div>
+            <div class="risk-tag">Exposición alta</div>
             <p class="muted" style="margin-top:10px; font-size:.92rem;">
-              Weak configuration, suspicious services and multiple visible assets.
+              Configuración débil, servicios visibles y varios activos detectados.
             </p>
           </div>
 
           <div class="floating-card glass bottom">
-            <div class="floating-title">Live Signals</div>
+            <div class="floating-title">Señales activas</div>
             <div class="mini-list">
               <div class="mini-item">
-                <span>Nearby networks</span>
+                <span>Redes cercanas</span>
                 <span>18</span>
               </div>
               <div class="mini-item">
-                <span>Devices detected</span>
+                <span>Dispositivos</span>
                 <span>27</span>
               </div>
               <div class="mini-item">
-                <span>Open services</span>
+                <span>Servicios abiertos</span>
                 <span>9</span>
               </div>
             </div>
@@ -1055,124 +1281,117 @@
         <div class="stats-bar glass reveal">
           <div class="stat">
             <div class="num">01</div>
-            <div class="label">Unified view of networks, devices, traffic and analysis</div>
+            <div class="label">Una vista unificada de redes, dispositivos, tráfico y análisis</div>
           </div>
+
           <div class="stat">
             <div class="num">02</div>
-            <div class="label">Built for clarity, speed and technical decision-making</div>
+            <div class="label">Pensado para interpretar información técnica sin saturar al usuario</div>
           </div>
+
           <div class="stat">
             <div class="num">03</div>
-            <div class="label">Designed to expose risk without overwhelming the user</div>
+            <div class="label">Diseñado para detectar exposición, malas configuraciones y actividad relevante</div>
           </div>
+
           <div class="stat">
             <div class="num">04</div>
-            <div class="label">Serious interface for a serious security product</div>
+            <div class="label">Una experiencia visual seria para presentar un producto de ciberseguridad</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- features -->
-    <section class="section" id="features">
+    <section class="section" id="funciones">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Core Capabilities</div>
-          <h2>Everything MendFi needs to communicate at first glance</h2>
+          <div class="eyebrow">Capacidades principales</div>
+          <h2>Una herramienta para ver, entender y priorizar riesgos de red</h2>
           <p class="lead">
-            The landing page should not just look good — it should explain the product.
-            These sections are built to show what MendFi does, how it works and why it matters.
+            MendFi no se limita a mostrar datos sueltos. Su objetivo es ordenar la información de una auditoría WiFi y ayudar al usuario a comprender qué está pasando en su entorno de red.
           </p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card glass reveal">
             <div class="feature-icon">◎</div>
-            <h3>Network Scan</h3>
+            <h3>Escaneo de redes</h3>
             <p>
-              Detect nearby WiFi networks, surface encryption types, measure signal quality
-              and give users immediate visibility into the wireless environment around them.
+              Detecta redes WiFi cercanas, identifica su cifrado, intensidad de señal, canal y posibles señales de configuración insegura o exposición innecesaria.
             </p>
           </article>
 
           <article class="feature-card glass reveal">
             <div class="feature-icon">◈</div>
-            <h3>Device Intelligence</h3>
+            <h3>Inventario de dispositivos</h3>
             <p>
-              Identify connected devices, infer vendor and type, and build a clearer picture
-              of what is actually present on the network in real time.
+              Localiza dispositivos conectados, muestra IP, MAC, fabricante y tipo aproximado para entender qué elementos forman parte de la red.
             </p>
           </article>
 
           <article class="feature-card glass reveal">
             <div class="feature-icon">↔</div>
-            <h3>Traffic Visibility</h3>
+            <h3>Monitorización de tráfico</h3>
             <p>
-              Observe active traffic and protocol distribution to understand how the network
-              behaves, where the activity is coming from and what deserves attention.
+              Visualiza actividad de red, protocolos, conexiones y patrones básicos para detectar comportamientos relevantes durante la auditoría.
             </p>
           </article>
 
           <article class="feature-card glass reveal">
             <div class="feature-icon">▲</div>
-            <h3>Security Analysis</h3>
+            <h3>Análisis de seguridad</h3>
             <p>
-              Turn technical observations into understandable findings with risk scoring,
-              summaries and recommendations that make the output more actionable.
+              Resume hallazgos técnicos en niveles de riesgo, explicaciones claras y recomendaciones orientadas a reducir exposición.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- product showcase -->
-    <section class="section" id="product">
+    <section class="section" id="producto">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Product Showcase</div>
-          <h2>Show the actual MendFi screens, not just generic marketing</h2>
+          <div class="eyebrow">Producto</div>
+          <h2>Las pantallas principales de MendFi, explicadas una por una</h2>
           <p class="lead">
-            This block is built so you can plug in real screenshots from the application.
-            Each tab can represent one core area of the product and explain what the user is looking at.
+            Esta sección está preparada para enseñar capturas reales de tu aplicación. Cada pestaña representa una parte clave del flujo de auditoría.
           </p>
         </div>
 
         <div class="showcase">
           <aside class="showcase-nav glass reveal">
-            <h3>Browse the interface</h3>
+            <h3>Explora la interfaz</h3>
             <p>
-              Replace these placeholder image paths with screenshots exported from your app.
-              The content on the right changes when the user clicks each section.
+              Cambia las imágenes de la carpeta <strong>images</strong> por capturas reales de MendFi. La estructura ya está lista para GitHub Pages.
             </p>
 
             <button class="tab-btn active" data-tab="overview">
-              <span class="tab-title">Overview Dashboard</span>
-              <span class="tab-text">High-level visibility into risk, activity and summary metrics.</span>
+              <span class="tab-title">Panel general</span>
+              <span class="tab-text">Resumen de exposición, actividad y estado de la red.</span>
             </button>
 
             <button class="tab-btn" data-tab="networks">
-              <span class="tab-title">Networks View</span>
-              <span class="tab-text">WiFi discovery, filtering and signal-level information.</span>
+              <span class="tab-title">Redes WiFi</span>
+              <span class="tab-text">Detección de SSID, cifrado, canal y señal.</span>
             </button>
 
             <button class="tab-btn" data-tab="devices">
-              <span class="tab-title">Devices View</span>
-              <span class="tab-text">Inventory of devices, vendors and inferred device types.</span>
+              <span class="tab-title">Dispositivos</span>
+              <span class="tab-text">Inventario de equipos conectados y clasificación visual.</span>
             </button>
 
             <button class="tab-btn" data-tab="traffic">
-              <span class="tab-title">Traffic View</span>
-              <span class="tab-text">Live traffic awareness with protocol and behavior context.</span>
+              <span class="tab-title">Tráfico</span>
+              <span class="tab-text">Actividad en tiempo real y lectura de protocolos.</span>
             </button>
 
             <button class="tab-btn" data-tab="analysis">
-              <span class="tab-title">Analysis View</span>
-              <span class="tab-text">Security findings, risk scoring and readable recommendations.</span>
+              <span class="tab-title">Análisis</span>
+              <span class="tab-text">Hallazgos, riesgo, impacto y recomendaciones.</span>
             </button>
           </aside>
 
           <div class="showcase-stage glass-strong reveal">
-            <!-- overview -->
             <div class="screen-panel active" data-panel="overview">
               <div class="screen-shell">
                 <div class="frame-bar">
@@ -1181,39 +1400,38 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                  <span class="frame-title">Overview Dashboard</span>
-                  <span class="muted" style="font-size:.88rem;">Main product screen</span>
+                  <span class="frame-title">Panel general</span>
+                  <span class="muted" style="font-size:.88rem;">Resumen principal</span>
                 </div>
-                <img class="screen-image" src="images/dashboard-overview.png" alt="MendFi overview screen">
+                <img class="screen-image" src="images/dashboard-overview.png" alt="Panel general de MendFi">
               </div>
 
               <div class="screen-meta">
                 <div class="meta-card glass">
-                  <h3>Main snapshot of exposure</h3>
+                  <h3>Visión rápida de la superficie de red</h3>
                   <p class="muted">
-                    The dashboard should summarize what matters first: detected assets, suspicious conditions,
-                    recent activity and a fast understanding of overall network posture.
+                    El panel principal resume la información más importante: redes detectadas, dispositivos activos, actividad reciente y nivel de exposición estimado.
                   </p>
+
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span><strong>Immediate visibility:</strong> users can understand the environment in seconds.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span><strong>Action-oriented:</strong> the interface should suggest what deserves review next.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span><strong>Executive + technical value:</strong> clean enough to present, useful enough to investigate.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span><strong>Lectura inmediata:</strong> permite entender el estado general de la red en pocos segundos.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span><strong>Priorización:</strong> destaca elementos que merecen revisión antes que el resto.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span><strong>Presentable:</strong> suficientemente visual para una demo, suficientemente técnico para una auditoría.</span></div>
                   </div>
                 </div>
 
                 <div class="meta-card glass">
-                  <h3>Suggested screenshot content</h3>
+                  <h3>Qué deberías mostrar aquí</h3>
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Risk score card</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Detected networks summary</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Devices overview</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Recent findings or alerts</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Indicador de riesgo</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Resumen de redes encontradas</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Dispositivos detectados</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Alertas o hallazgos recientes</span></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- networks -->
             <div class="screen-panel" data-panel="networks">
               <div class="screen-shell">
                 <div class="frame-bar">
@@ -1222,39 +1440,38 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                  <span class="frame-title">Networks View</span>
-                  <span class="muted" style="font-size:.88rem;">Wireless environment</span>
+                  <span class="frame-title">Redes WiFi</span>
+                  <span class="muted" style="font-size:.88rem;">Entorno inalámbrico</span>
                 </div>
-                <img class="screen-image" src="images/networks-screen.png" alt="MendFi networks screen">
+                <img class="screen-image" src="images/networks-screen.png" alt="Pantalla de redes WiFi de MendFi">
               </div>
 
               <div class="screen-meta">
                 <div class="meta-card glass">
-                  <h3>Discover nearby WiFi infrastructure</h3>
+                  <h3>Auditoría del entorno inalámbrico</h3>
                   <p class="muted">
-                    This section explains how MendFi surfaces SSIDs, signal strength, channels,
-                    encryption details and other properties that help the user understand the wireless surface.
+                    La vista de redes permite identificar SSID cercanos, tipos de cifrado, intensidad de señal y posibles indicios de redes abiertas, débiles o sospechosas.
                   </p>
+
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Surface authentication and encryption types clearly.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Highlight weak or open networks where appropriate.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Make sorting and filtering obvious and useful.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Ayuda a detectar configuraciones WiFi poco seguras.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Permite comparar redes por señal, canal y seguridad.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Funciona como primera capa de reconocimiento.</span></div>
                   </div>
                 </div>
 
                 <div class="meta-card glass">
-                  <h3>Suggested screenshot content</h3>
+                  <h3>Qué deberías mostrar aquí</h3>
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>SSID list with security type</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Signal strength indicators</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Search or filter controls</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Selected network detail panel</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Listado de SSID</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Cifrado WPA/WPA2/WPA3/Open</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Señal y canal</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Panel de detalle de red</span></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- devices -->
             <div class="screen-panel" data-panel="devices">
               <div class="screen-shell">
                 <div class="frame-bar">
@@ -1263,39 +1480,38 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                  <span class="frame-title">Devices View</span>
-                  <span class="muted" style="font-size:.88rem;">Connected assets</span>
+                  <span class="frame-title">Dispositivos conectados</span>
+                  <span class="muted" style="font-size:.88rem;">Inventario de activos</span>
                 </div>
-                <img class="screen-image" src="images/devices-screen.png" alt="MendFi devices screen">
+                <img class="screen-image" src="images/devices-screen.png" alt="Pantalla de dispositivos de MendFi">
               </div>
 
               <div class="screen-meta">
                 <div class="meta-card glass">
-                  <h3>Know what is on the network</h3>
+                  <h3>Quién está dentro de la red</h3>
                   <p class="muted">
-                    MendFi should make device visibility feel structured, readable and practical.
-                    The landing page can show how devices are categorized, enriched and prioritized.
+                    Esta pantalla convierte una red difícil de interpretar en un inventario claro de dispositivos, fabricantes y tipos aproximados.
                   </p>
+
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Device type inference helps reduce ambiguity.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Vendor lookup adds context to MAC-based discovery.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Useful for both quick inventory and deeper investigation.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Útil para detectar equipos desconocidos.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Relaciona IP, MAC, fabricante y categoría.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Reduce la ambigüedad en redes domésticas o pequeñas oficinas.</span></div>
                   </div>
                 </div>
 
                 <div class="meta-card glass">
-                  <h3>Suggested screenshot content</h3>
+                  <h3>Qué deberías mostrar aquí</h3>
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Device list with IP / MAC / vendor</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Device type badges</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Search or filter by category</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Selected device detail card</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>IP, MAC y fabricante</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Badges de tipo de dispositivo</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Router, móvil, portátil, IoT, TV</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Detalle del dispositivo seleccionado</span></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- traffic -->
             <div class="screen-panel" data-panel="traffic">
               <div class="screen-shell">
                 <div class="frame-bar">
@@ -1304,39 +1520,38 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                  <span class="frame-title">Traffic View</span>
-                  <span class="muted" style="font-size:.88rem;">Network behavior</span>
+                  <span class="frame-title">Tráfico de red</span>
+                  <span class="muted" style="font-size:.88rem;">Actividad en tiempo real</span>
                 </div>
-                <img class="screen-image" src="images/traffic-screen.png" alt="MendFi traffic screen">
+                <img class="screen-image" src="images/traffic-screen.png" alt="Pantalla de tráfico de MendFi">
               </div>
 
               <div class="screen-meta">
                 <div class="meta-card glass">
-                  <h3>Understand activity, not just inventory</h3>
+                  <h3>No solo saber qué hay, sino qué está pasando</h3>
                   <p class="muted">
-                    Traffic visibility helps users see what is happening in motion:
-                    who is talking, which protocols are active and whether patterns look normal.
+                    La vista de tráfico permite observar actividad, protocolos y conexiones para entender mejor el comportamiento de la red.
                   </p>
+
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Support protocol-level insight without overcomplicating the page.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Show volume, direction and notable activity clearly.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Useful for storytelling in a product landing page.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Ayuda a detectar actividad inesperada.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Hace visible el uso de protocolos y conexiones.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Aporta contexto al análisis de seguridad.</span></div>
                   </div>
                 </div>
 
                 <div class="meta-card glass">
-                  <h3>Suggested screenshot content</h3>
+                  <h3>Qué deberías mostrar aquí</h3>
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Live packet or flow stream</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Protocol distribution chart</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Source / destination details</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Recent activity history</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Flujo de paquetes o conexiones</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Protocolos HTTP, HTTPS, DNS, DHCP</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Origen y destino</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Gráfico de actividad reciente</span></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- analysis -->
             <div class="screen-panel" data-panel="analysis">
               <div class="screen-shell">
                 <div class="frame-bar">
@@ -1345,33 +1560,33 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                  <span class="frame-title">Analysis View</span>
-                  <span class="muted" style="font-size:.88rem;">Findings and recommendations</span>
+                  <span class="frame-title">Análisis de seguridad</span>
+                  <span class="muted" style="font-size:.88rem;">Hallazgos y recomendaciones</span>
                 </div>
-                <img class="screen-image" src="images/analysis-screen.png" alt="MendFi analysis screen">
+                <img class="screen-image" src="images/analysis-screen.png" alt="Pantalla de análisis de MendFi">
               </div>
 
               <div class="screen-meta">
                 <div class="meta-card glass">
-                  <h3>Translate technical observations into action</h3>
+                  <h3>De datos técnicos a decisiones claras</h3>
                   <p class="muted">
-                    Analysis is where MendFi becomes more than a scanner. It contextualizes
-                    findings and helps users understand what deserves attention first.
+                    La vista de análisis resume riesgos, impacto y recomendaciones para que el usuario pueda priorizar acciones sin perderse entre datos aislados.
                   </p>
+
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Readable summaries make the product more accessible.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Risk scoring introduces prioritization and urgency.</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Recommendations create a clearer path from detection to response.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Clasifica hallazgos por severidad.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Explica el impacto de forma comprensible.</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Propone pasos para reducir exposición.</span></div>
                   </div>
                 </div>
 
                 <div class="meta-card glass">
-                  <h3>Suggested screenshot content</h3>
+                  <h3>Qué deberías mostrar aquí</h3>
                   <div class="meta-list">
-                    <div class="meta-row"><span class="bullet"></span><span>Risk level badge</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Primary finding summary</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Evidence or observed conditions</span></div>
-                    <div class="meta-row"><span class="bullet"></span><span>Recommendations / next steps</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Nivel de riesgo</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Hallazgo principal</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Evidencia detectada</span></div>
+                    <div class="meta-row"><span class="bullet"></span><span>Recomendaciones</span></div>
                   </div>
                 </div>
               </div>
@@ -1381,106 +1596,304 @@
       </div>
     </section>
 
-    <!-- use cases -->
-    <section class="section" id="use-cases">
+    <section class="section" id="capturas">
+      <div class="container">
+        <div class="section-header center-header reveal">
+          <div class="eyebrow">Galería de pantallas</div>
+          <h2>Capturas listas para enseñar MendFi como producto real</h2>
+          <p class="lead">
+            Esta sección sirve para enseñar varias partes del producto de forma rápida, visual y comercial. Cambia las rutas por tus imágenes reales.
+          </p>
+        </div>
+
+        <div class="screenshot-grid">
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/dashboard-overview.png" alt="Vista general de MendFi">
+            <div class="screenshot-content">
+              <span>Dashboard</span>
+              <h3>Vista general</h3>
+              <p>Resumen visual de redes, dispositivos, tráfico y exposición para entender el estado de la red desde el primer vistazo.</p>
+            </div>
+          </article>
+
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/networks-screen.png" alt="Escaneo de redes WiFi">
+            <div class="screenshot-content">
+              <span>WiFi Scan</span>
+              <h3>Redes detectadas</h3>
+              <p>Listado de redes cercanas con información sobre seguridad, señal, canal y posibles indicadores de configuración débil.</p>
+            </div>
+          </article>
+
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/devices-screen.png" alt="Dispositivos conectados">
+            <div class="screenshot-content">
+              <span>Devices</span>
+              <h3>Inventario de dispositivos</h3>
+              <p>Identificación de activos conectados con IP, MAC, fabricante y clasificación visual por tipo de dispositivo.</p>
+            </div>
+          </article>
+
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/traffic-screen.png" alt="Monitor de tráfico">
+            <div class="screenshot-content">
+              <span>Traffic</span>
+              <h3>Tráfico en directo</h3>
+              <p>Lectura de actividad de red, protocolos y conexiones para aportar contexto al análisis técnico.</p>
+            </div>
+          </article>
+
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/analysis-screen.png" alt="Análisis de seguridad">
+            <div class="screenshot-content">
+              <span>Analysis</span>
+              <h3>Riesgo y recomendaciones</h3>
+              <p>Traducción de hallazgos técnicos en severidad, impacto y acciones sugeridas para mejorar la seguridad.</p>
+            </div>
+          </article>
+
+          <article class="screenshot-card glass reveal">
+            <img class="screenshot-thumb" src="images/lab-screen.png" alt="Modo laboratorio">
+            <div class="screenshot-content">
+              <span>Lab Mode</span>
+              <h3>Espacio de análisis</h3>
+              <p>Zona pensada para pruebas, notas, terminal o investigación técnica durante una auditoría controlada.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="casos">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Use Cases</div>
-          <h2>MendFi can be positioned for different user profiles</h2>
+          <div class="eyebrow">Casos de uso</div>
+          <h2>MendFi se adapta a distintos perfiles de usuario</h2>
           <p class="lead">
-            This helps the landing page feel more strategic. It stops being just a list of features
-            and starts telling people who the product is for.
+            La propuesta de valor cambia según quién lo use: usuarios domésticos, perfiles técnicos o equipos que necesitan una visión clara de su red.
           </p>
         </div>
 
         <div class="usecase-grid">
           <article class="usecase-card glass reveal">
-            <span class="tag">Home & Personal</span>
-            <h3>Users who want visibility and control</h3>
+            <span class="tag">Uso doméstico</span>
+            <h3>Control de la red personal</h3>
             <p>
-              People who want to understand what is connected to their network,
-              whether their setup looks exposed and which devices or services deserve review.
+              Para usuarios que quieren saber qué dispositivos están conectados, si su WiFi está bien configurado y si hay señales de exposición.
             </p>
           </article>
 
           <article class="usecase-card glass reveal">
-            <span class="tag">Technical Users</span>
-            <h3>Analysts, enthusiasts and advanced operators</h3>
+            <span class="tag">Perfil técnico</span>
+            <h3>Auditoría rápida y visual</h3>
             <p>
-              Users who need a clearer and faster way to inspect networks,
-              devices and traffic without jumping between fragmented tools.
+              Para estudiantes, analistas o entusiastas que necesitan observar redes, dispositivos y tráfico sin depender de varias herramientas separadas.
             </p>
           </article>
 
           <article class="usecase-card glass reveal">
-            <span class="tag">Teams & Organizations</span>
-            <h3>Teams that need readable network intelligence</h3>
+            <span class="tag">Pequeñas organizaciones</span>
+            <h3>Seguridad entendible</h3>
             <p>
-              A product story can also target environments where structured insight,
-              risk awareness and fast interpretation matter to non-specialist stakeholders.
+              Para entornos donde hace falta explicar riesgos de red de manera visual, ordenada y comprensible para perfiles no técnicos.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- workflow -->
     <section class="section" id="workflow">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">Workflow</div>
-          <h2>A simple narrative users can understand instantly</h2>
+          <div class="eyebrow">Flujo de uso</div>
+          <h2>Un proceso simple: detectar, interpretar y actuar</h2>
           <p class="lead">
-            Good landing pages reduce friction. This section explains the product in four steps:
-            detect, inspect, analyze and act.
+            La experiencia está diseñada para que el usuario avance desde el reconocimiento inicial hasta la priorización de riesgos.
           </p>
         </div>
 
         <div class="workflow">
           <article class="step glass reveal">
             <div class="step-num">01</div>
-            <h3>Scan</h3>
-            <p>Discover nearby WiFi environments and gather the first layer of wireless visibility.</p>
+            <h3>Escanear</h3>
+            <p>Detecta redes WiFi cercanas y obtiene una primera visión del entorno inalámbrico.</p>
           </article>
 
           <article class="step glass reveal">
             <div class="step-num">02</div>
-            <h3>Inspect</h3>
-            <p>Enumerate devices and observe traffic behavior to understand the network more deeply.</p>
+            <h3>Identificar</h3>
+            <p>Enumera dispositivos conectados y añade contexto mediante fabricante, IP, MAC y tipo.</p>
           </article>
 
           <article class="step glass reveal">
             <div class="step-num">03</div>
-            <h3>Analyze</h3>
-            <p>Surface suspicious conditions, weak configurations and risk indicators in a readable way.</p>
+            <h3>Observar</h3>
+            <p>Analiza actividad de red y tráfico para entender qué está ocurriendo en tiempo real.</p>
           </article>
 
           <article class="step glass reveal">
             <div class="step-num">04</div>
-            <h3>Respond</h3>
-            <p>Use the findings and recommendations to prioritize what needs attention next.</p>
+            <h3>Priorizar</h3>
+            <p>Convierte los hallazgos en niveles de riesgo y recomendaciones accionables.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- cta -->
-    <section class="section" id="contact">
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Cómo funciona</div>
+          <h2>De un escaneo inicial a una lectura clara del riesgo</h2>
+          <p class="lead">
+            Esta línea temporal explica el funcionamiento de MendFi como si fuese una demo guiada del producto.
+          </p>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-card glass">
+              <h3>Reconocimiento del entorno</h3>
+              <p>
+                MendFi inicia el análisis detectando redes WiFi cercanas y recopilando información relevante como nombre de red, señal, canal y tipo de cifrado.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-card glass">
+              <h3>Construcción del mapa de dispositivos</h3>
+              <p>
+                Después, analiza los dispositivos conectados para construir una vista más clara de los activos presentes en la red.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-card glass">
+              <h3>Lectura de actividad y comportamiento</h3>
+              <p>
+                El sistema observa tráfico y protocolos para añadir una capa de comportamiento, no solo de inventario.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-card glass">
+              <h3>Análisis de exposición</h3>
+              <p>
+                MendFi combina señales detectadas y las convierte en hallazgos interpretables: riesgos, impacto y recomendaciones.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">5</div>
+            <div class="timeline-card glass">
+              <h3>Resultado accionable</h3>
+              <p>
+                El usuario obtiene una visión clara de qué revisar primero, qué puede esperar y qué representa mayor exposición para la red.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="faq-grid">
+          <div class="section-header reveal">
+            <div class="eyebrow">Preguntas frecuentes</div>
+            <h2>Dudas normales antes de probar MendFi</h2>
+            <p class="lead">
+              Esta sección ayuda a que la landing parezca más real y resuelve preguntas básicas sobre el enfoque del producto.
+            </p>
+          </div>
+
+          <div class="faq-list reveal">
+            <div class="faq-item glass active">
+              <button class="faq-question">
+                <span>¿MendFi es una herramienta ofensiva?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  No. MendFi está planteado como una herramienta de visibilidad, auditoría y análisis defensivo. Su objetivo es ayudar a entender el estado de una red y detectar configuraciones o comportamientos que puedan representar riesgo.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item glass">
+              <button class="faq-question">
+                <span>¿Qué diferencia a MendFi de usar varias herramientas sueltas?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  La diferencia está en la experiencia. MendFi agrupa escaneo WiFi, dispositivos, tráfico y análisis en una interfaz única, más clara y pensada para interpretar la información rápidamente.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item glass">
+              <button class="faq-question">
+                <span>¿Está pensado para usuarios técnicos o no técnicos?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Está pensado para ambos perfiles. Los usuarios técnicos pueden profundizar en los datos, mientras que los usuarios menos técnicos reciben una lectura más visual y priorizada del riesgo.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item glass">
+              <button class="faq-question">
+                <span>¿Qué tipo de capturas debería poner en la landing?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Lo ideal es incluir una captura del dashboard general, una de redes WiFi, una de dispositivos, una de tráfico y una del análisis de seguridad. Con eso ya se entiende bastante bien el producto.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item glass">
+              <button class="faq-question">
+                <span>¿La landing necesita backend?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  No. Esta landing funciona solo con HTML, CSS y JavaScript. Puedes subirla directamente a GitHub Pages sin instalar nada más.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
       <div class="container">
         <div class="cta-panel glass-strong reveal">
           <div>
-            <div class="eyebrow">Build a better network view</div>
-            <h2>MendFi gives network awareness a cleaner interface</h2>
+            <div class="eyebrow">Network awareness made simple</div>
+            <h2>MendFi convierte una red compleja en una lectura clara</h2>
             <p>
-              If you want, this final section can point to a waitlist, GitHub repository,
-              live demo, documentation or download page. Right now it is ready to work as the
-              main conversion block for the landing.
+              Una interfaz moderna para descubrir activos, entender actividad y priorizar riesgos. Pensada para demos, auditorías controladas y presentación del proyecto como producto digital real.
             </p>
           </div>
 
           <div class="cta-actions">
-            <a href="https://github.com/" target="_blank" rel="noreferrer" class="btn btn-secondary">View GitHub</a>
-            <a href="#" class="btn btn-primary">Request Demo</a>
+            <a href="https://github.com/" target="_blank" rel="noreferrer" class="btn btn-secondary">Ver GitHub</a>
+            <a href="#capturas" class="btn btn-primary">Ver capturas</a>
           </div>
         </div>
       </div>
@@ -1495,44 +1908,55 @@
             <span class="brand-mark">M</span>
             <span>MendFi</span>
           </a>
+
           <p>
-            MendFi is a modern network intelligence concept focused on WiFi visibility,
-            device awareness, traffic monitoring and readable security analysis.
+            MendFi es una propuesta de herramienta de auditoría WiFi centrada en visibilidad, control y seguridad. Su objetivo es hacer que la información de red sea más fácil de entender, presentar y convertir en decisiones.
           </p>
+
+          <div class="footer-meta">
+            <span class="footer-pill">HTML</span>
+            <span class="footer-pill">CSS</span>
+            <span class="footer-pill">JavaScript</span>
+            <span class="footer-pill">GitHub Pages</span>
+            <span class="footer-pill">Liquid glass UI</span>
+          </div>
         </div>
 
         <div class="footer-links">
           <div>
-            <h4>Product</h4>
-            <a href="#product">Overview</a>
-            <a href="#features">Features</a>
-            <a href="#workflow">Workflow</a>
+            <h4>Producto</h4>
+            <a href="#producto">Interfaz</a>
+            <a href="#funciones">Funciones</a>
+            <a href="#capturas">Capturas</a>
+            <a href="#timeline">Proceso</a>
           </div>
 
           <div>
-            <h4>Company</h4>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#contact">Contact</a>
-            <a href="#">About</a>
+            <h4>Proyecto</h4>
+            <a href="#casos">Casos de uso</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#">Documentación</a>
           </div>
 
           <div>
-            <h4>Links</h4>
+            <h4>Recursos</h4>
             <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#">Documentation</a>
-            <a href="#">Privacy</a>
+            <a href="#">Demo</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Licencia</a>
           </div>
         </div>
       </div>
 
       <div class="copyright">
-        © 2026 MendFi — Network Intelligence Platform
+        <span>© 2026 MendFi — Plataforma de inteligencia y auditoría WiFi.</span>
+        <span>Diseñado para presentar el producto con una estética técnica, limpia y profesional.</span>
       </div>
     </div>
   </footer>
 
   <script>
-    // navbar style on scroll
     const navbar = document.getElementById("navbar");
 
     window.addEventListener("scroll", () => {
@@ -1545,7 +1969,6 @@
       }
     });
 
-    // tabs for screenshots
     const tabButtons = document.querySelectorAll(".tab-btn");
     const panels = document.querySelectorAll(".screen-panel");
 
@@ -1561,7 +1984,16 @@
       });
     });
 
-    // reveal on scroll
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -1572,7 +2004,6 @@
 
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    // optional background mouse motion
     document.addEventListener("mousemove", (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 14;
       const y = (e.clientY / window.innerHeight - 0.5) * 14;
