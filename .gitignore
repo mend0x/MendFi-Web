@@ -1,0 +1,6 @@
+
+# videos locales grandes
+videos/*.mp4
+videos/*.mov
+videos/*.mkv
+videos/*.webm
